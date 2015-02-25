@@ -1,5 +1,5 @@
 """
-WSGI config for DjangoAdMag project.
+WSGI config for django_project project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -8,7 +8,10 @@ https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/
 """
 
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "DjangoAdMag.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_project.settings")
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
+
+from whitenoise.django import DjangoWhiteNoise
+application = DjangoWhiteNoise(application)
