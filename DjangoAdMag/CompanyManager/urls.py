@@ -5,4 +5,5 @@ urlpatterns = patterns('',
 		url(r'^$', views.RegisterView),
 
 
+
 )

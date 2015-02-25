@@ -2,7 +2,7 @@ from django.shortcuts import render, render_to_response, RequestContext
 
 from .models import Company, City
 from .forms import CompanyForm
-from django.core.context_processors import csrf #more security on page
+from django.core.context_processors import csrf
 
 	
 
