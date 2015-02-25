@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'CompanyManager'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,4 +81,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/static/'
+TEMPLATE_DIRS = [
+    os.path.join(BASE_DIR, 'templates')
+]
+
+STATIC_URL = "/static/"
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+ALLOWED_HOSTS = ['*']
+
+STATIC_ROOT = 'staticfiles'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
+DEBUG = False
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
